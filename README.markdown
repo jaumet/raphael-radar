@@ -1,3 +1,18 @@
+jaumet/raphael-radar
+=================
+
+jaumet/raphael-radar is a fork from ono/raphael-radar
+[raphael-radar](https://github.com/tnzk/ono/raphael-radar)
+
+The objectives of refactoring it are:
+
+* configurable number of points for each radar axys
+* configurable size & color of each points (circles)
+* interaction on clicking each point
+* easy configuration of each point
+
+-------------------------------------------------------
+
 ono/raphael-radar
 =================
 

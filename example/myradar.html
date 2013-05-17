@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8"> 
+    <title>Raphaël Radar Chart Plugin Sample</title> 
+    <link rel="stylesheet" href="example.css"> 
+    <script src="raphael-1.5.2.min.js"></script> 
+    <script src="jquery-1.5.min.js"></script> 
+    <script src="../raphael-radar.js"></script> 
+  </head>
+  <body>
+
+    <h2>ConfView radar</h2>
+    <p>Example 1: 5 axes:</p>
+    <ul>
+    	<li>Axys AAAA: 3 values A1, A2, A3</li>
+    	<li>Axys BBBB: 2 values B1, B2</li>
+    	<li>Axys CCCC: 3 values C1, C2, C3</li>
+    	<li>Axys DDDD: 2 values D1, D2</li>
+    	<li>Axys EEEE: 5 values E1, E2, E3, E4, E5</li>
+    </ul>
+    <div class="example">
+      <div class="graph" id="simple_graph">
+
+      </div>
+      <div class="code">
+
+      </div>
+    </div>
+
+  </body>
+
+  <script>
+    $(document).ready(function(){
+      var score_groups = [
+          {title: "A", scores: [10,  ,10,  ,10]},
+          {title: "B", scores: [  , 8,  , 8, 8]},
+          {title: "C", scores: [ 6,  , 6,  , 6]},
+          {title: "D", scores: [  , 4,  , 4, 4]},
+          {title: "E", scores: [ 2,  , 2,  , 2]}
+          ];
+
+      var labels =  ["AAAA", "BBBB", "CCCC", "DDDD", "EEEE"];
+      var my = [[[12,12,5,12,12],'grey'],[[8,40,8,40,12],'orange'],[[12,4,8,4,12],'pink'],[[16,4,8,4,12],'yellow'],[[20,20,10,20,10],'red']];
+      var max_point = 10;
+
+      var paper1 = Raphael( "simple_graph", 460, 360);
+      var simple = paper1.radarchart( 221, 160, 120, labels, 10, score_groups, my);
+  
+        
+    	$("circle").click(
+    		function(){
+    			var pos = $(this).position();
+    			alert("This circle is in position: left: " + pos.left + ", top: " + pos.top);
+    		}
+    	);
+  });
+  </script>
+</html>
