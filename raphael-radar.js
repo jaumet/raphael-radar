@@ -145,7 +145,7 @@
               
       var title = score_groups[i].title;
       var vector = {};
-      // JAUME: here we are not drawing the lines (the polygon) for each group!!
+      // JAUME: here we are NOT drawing the lines (the polygon) for each group!!
       //var line = this.path( path_string( center, points, scores) ).attr(draw_options['lines']);
       vector['line'] = line;
       
@@ -159,9 +159,9 @@
 
         // JAUME: here it is defined the size of each circle/points.
        
-        //var point = this.circle(x,y,draw_options['points']['size']).attr(draw_options['points']);
+        //ORIG-> //var point = this.circle(x,y,draw_options['points']['size']).attr(draw_options['points']);
+        //Random sizes-> //var point = this.circle(x,y,Math.floor(5+Math.random()*11)).attr(draw_options['points']);
         var point = this.circle(x,y,my[j][0][i]).attr(draw_options['points']).attr({fill:my[j][1]});
-        //var point = this.circle(x,y,Math.floor(5+Math.random()*11)).attr(draw_options['points']);
         v_points.push(point);
       }
       vector['points'] = v_points;
